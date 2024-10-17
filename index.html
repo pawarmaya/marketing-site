@@ -4,26 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Product Launch - Welcome to Our Marketing Site</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Animated Marketing Website</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        header {
+            height: 100vh;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+        }
+        
+        header h1 {
+            font-size: 3.5em;
+            margin: 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        header p {
+            font-size: 1.5em;
+            margin: 20px 0;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        header a {
+            padding: 15px 30px;
+            background-color: white;
+            color: #0072ff;
+            border-radius: 30px;
+            font-size: 1.2em;
+            text-decoration: none;
+            cursor: pointer;
+            animation: bounce 2s infinite;
+        }
+        
+        section {
+            height: 100vh;
+            background-color: #fff;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2.5em;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body>
+
+    <!-- Header / Hero Section -->
     <header>
-        <img src="images/logo.png" alt="Company Logo" class="logo">
-        <h1>Welcome to Our Marketing Site</h1>
-        <p>Get ready for our next big product launch!!</p>
+        <h1>Welcome to Our Product Launch</h1>
+        <p>Get ready for an amazing experience!</p>
+        <a href="#about">Learn More</a>
     </header>
 
-    <section class="launch-info">
-        <h2>Launching Soon!</h2>
-        <p>We’re excited to announce that our next big product will be launching soon. Stay tuned for updates.</p>
-        <p id="countdown"></p>
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Our Product</h2>
+        <p>Our new product will revolutionize the way you experience technology. Stay tuned for the official launch!</p>
     </section>
 
-    <footer>
-        <p>&copy; 2024 Company Name. All Rights Reserved.</p>
-    </footer>
+    <script>
+        // Animation for smooth scrolling
+        document.querySelector('a[href="#about"]').addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    </script>
 
-    <script src="js/script.js"></script>
 </body>
 </html>
